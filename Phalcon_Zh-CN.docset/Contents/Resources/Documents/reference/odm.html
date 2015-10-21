@@ -5,50 +5,19 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
-    <title>对象文档映射 ODM (Object-Document Mapper) &mdash; Phalcon 2.0.6 文档</title>
-    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../_static/phalcon.min.css"/>    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <title>对象文档映射 ODM (Object-Document Mapper) &mdash; Phalcon 2.0.8 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/><link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
     <link rel="stylesheet" href="../_static/docs.css" type="text/css"/>
-    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.6',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
+    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.8',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
 
     <script src="../_static/jquery.min.js"></script>
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Phalcon 2.0.6 文档" href="../index.html"/>
+    <link rel="top" title="Phalcon 2.0.8 文档" href="../index.html"/>
     <link rel="next" title="使用视图（Using Views）" href="views.html"/>
     <link rel="prev" title="缓存对象关系映射（Caching in the ORM）" href="models-cache.html"/> 
   </head>
   <body>
-
-<header class="page-header">
-    <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
-                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
-                <ul class="nav navbar-nav main-menu">
-                  <li class="first"><a href="http://phalconphp.com/en/download" class="header-nav-link">Download</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </header>
-
 <div class="heading">
     <div class="container">
         <div class="row">
@@ -56,7 +25,6 @@
         </div>
     </div>
 </div>
-
     <div class="related">
       <ul>
         <li class="right">
@@ -66,7 +34,7 @@
         <li class="right">
           <a href="models-cache.html" title="缓存对象关系映射（Caching in the ORM）" accesskey="P">上一页</a> |</li>
         <li><a href="http://phalconphp.com">Home</a> &raquo;</li>
-        <li><a href="../index.html">Phalcon 2.0.6 文档</a> &raquo;</li> 
+        <li><a href="../index.html">Phalcon 2.0.8 文档</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -75,13 +43,11 @@
       <td class="primary-box" width="25%" valign="top">
             <div>
             <div id="searchbox" style="">
-
                 <div style="width:200px;padding:10px">
                   <gcse:searchbox-only></gcse:searchbox-only>
                 </div>
             </div>
             </div>
-            
             <h3><a href="../index.html">內容目录</a></h3>
             <ul>
 <li><a class="reference internal" href="#">对象文档映射 ODM (Object-Document Mapper)</a><ul>
@@ -159,7 +125,7 @@
 </div>
 <blockquote class="highlights">
 <div><p>如果PHP版本为5.4/5.5或更高版本，为了提高性能节省内存开销，最好在模型类文件中定义每个字段。</p>
-<p>模型Robots默认和数据库中的robots表格映射。如果想使用别的名字映射数据库中的表格则只需要重写getSource()方法即可：</p>
+<p>模型Robots默认和数据库中的robots表格映射。如果想使用别的名字映射数据库中的表格则只需要重写:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>getSource()`方法即可：</p>
 </div></blockquote>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -306,7 +272,7 @@ connecting to: <span class="nb">test</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>这里我们可以使用findFirst()来取得配置查询的第一条记录：</p>
+<p>这里我们可以使用:code:<a href="#id3"><span class="problematic" id="id4">`</span></a>findFirst()`来取得配置查询的第一条记录：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="c1">// What&#39;s the first robot in robots collection?</span>
@@ -324,7 +290,7 @@ connecting to: <span class="nb">test</span>
 <span class="k">echo</span> <span class="s2">&quot;The first mechanical robot name is &quot;</span><span class="p">,</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>find()和findFirst方法都接收一个关联数据组为查询的条件：</p>
+<p>:code:<a href="#id5"><span class="problematic" id="id6">`</span></a>find()`和:code:<a href="#id7"><span class="problematic" id="id8">`</span></a>findFirst()`方法都接收一个关联数据组为查询的条件：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="c1">// First robot where type = &quot;mechanical&quot; and year = &quot;1999&quot;</span>
@@ -347,41 +313,6 @@ connecting to: <span class="nb">test</span>
 </pre></div>
 </div>
 <p>可用的查询选项：</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="7%"/>
-<col width="55%"/>
-<col width="38%"/>
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">参数</th>
-<th class="head">描述</th>
-<th class="head">例子</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>条件</td>
-<td>搜索条件，用于取只满足要求的数，默认情况下Phalcon_model会假定关联数据的第一个参数为查询条</td>
-<td>&#8220;conditions&#8221; =&gt; array(&#8216;$gt&#8217; =&gt; 1990)</td>
-</tr>
-<tr class="row-odd"><td>字段</td>
-<td>若指定则返回指定的字段而非全部字，当设置此字段时会返回非完全版本的对</td>
-<td>&#8220;fields&#8221; =&gt; array(&#8216;name&#8217; =&gt; true)</td>
-</tr>
-<tr class="row-even"><td>排</td>
-<td>这个选项用来对查询结果进行排序，使用一个为多个字段作为排序的标准，使用数组来表格，1代表升序，－1代表降</td>
-<td>&#8220;order&#8221; =&gt; array(&#8220;name&#8221; =&gt; -1, &#8220;status&#8221; =&gt; 1)</td>
-</tr>
-<tr class="row-odd"><td>限制</td>
-<td>限制查询结果集到指定的范围</td>
-<td>&#8220;limit&#8221; =&gt; 10</td>
-</tr>
-<tr class="row-even"><td>间隔</td>
-<td>跳过指定的条目选取结果</td>
-<td>&#8220;skip&#8221; =&gt; 50</td>
-</tr>
-</tbody>
-</table>
 <p>如果你有使用sql(关系)数据库的经验，你也许想查看二者的映射表格 <a class="reference external" href="http://www.php.net/manual/en/mongo.sqltomongo.php">SQL to Mongo Mapping Chart</a> .</p>
 </div>
 <div class="section" id="aggregations">
@@ -453,88 +384,6 @@ connecting to: <span class="nb">test</span>
 <div class="section" id="validation-events-and-events-manager">
 <h3>验证事件和事件管理（Validation Events and Events Manager）<a class="headerlink" href="#validation-events-and-events-manager" title="永久链接至标题">¶</a></h3>
 <p>在模型类的数据操作过程中可以产生一些事件。我们可以在这些事件中定义一些业务规则。下面是 <a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 所支持的事件及其执行顺序：</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="20%"/>
-<col width="25%"/>
-<col width="23%"/>
-<col width="32%"/>
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">操作</th>
-<th class="head">名称</th>
-<th class="head">能否停止操作</th>
-<th class="head">解释</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Inserting/Updating</td>
-<td>beforeValidation</td>
-<td>YES</td>
-<td>在验证和最终插入/更新进行之执行</td>
-</tr>
-<tr class="row-odd"><td>Inserting</td>
-<td>beforeValidationOnCreate</td>
-<td>YES</td>
-<td>仅当创建新条目验证之前执行</td>
-</tr>
-<tr class="row-even"><td>Updating</td>
-<td>beforeValidationOnUpdate</td>
-<td>YES</td>
-<td>仅在更新条目验证之前</td>
-</tr>
-<tr class="row-odd"><td>Inserting/Updating</td>
-<td>onValidationFails</td>
-<td>YES (already stopped)</td>
-<td>验证执行失败后执行</td>
-</tr>
-<tr class="row-even"><td>Inserting</td>
-<td>afterValidationOnCreate</td>
-<td>YES</td>
-<td>新建条目验证之后执行</td>
-</tr>
-<tr class="row-odd"><td>Updating</td>
-<td>afterValidationOnUpdate</td>
-<td>YES</td>
-<td>更新条目后执行</td>
-</tr>
-<tr class="row-even"><td>Inserting/Updating</td>
-<td>afterValidation</td>
-<td>YES</td>
-<td>在验证进行之前执</td>
-</tr>
-<tr class="row-odd"><td>Inserting/Updating</td>
-<td>beforeSave</td>
-<td>YES</td>
-<td>在请示的操作（保存）运行之前</td>
-</tr>
-<tr class="row-even"><td>Updating</td>
-<td>beforeUpdate</td>
-<td>YES</td>
-<td>更新操作执行之前运行</td>
-</tr>
-<tr class="row-odd"><td>Inserting</td>
-<td>beforeCreate</td>
-<td>YES</td>
-<td>创建操作执行之前运行</td>
-</tr>
-<tr class="row-even"><td>Updating</td>
-<td>afterUpdate</td>
-<td>NO</td>
-<td>更新执行之后执行</td>
-</tr>
-<tr class="row-odd"><td>Inserting</td>
-<td>afterCreate</td>
-<td>NO</td>
-<td>创建执行之后</td>
-</tr>
-<tr class="row-even"><td>Inserting/Updating</td>
-<td>afterSave</td>
-<td>NO</td>
-<td>保存执行之后</td>
-</tr>
-</tbody>
-</table>
 <p>为了响应一个事件，我们需在模型中实现同名方法：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -604,29 +453,39 @@ connecting to: <span class="nb">test</span>
 <span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection\Manager</span> <span class="k">as</span> <span class="nx">CollectionManager</span><span class="p">;</span>
 
 <span class="c1">// Registering the collectionManager service</span>
-<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;collectionManager&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s1">&#39;collectionManager&#39;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
 
-    <span class="nv">$eventsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
+        <span class="nv">$eventsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
 
-    <span class="c1">// Attach an anonymous function as a listener for &quot;model&quot; events</span>
-    <span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;collection&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$model</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$model</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Robots&#39;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getType</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;beforeSave&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nv">$model</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">==</span> <span class="s1">&#39;Scooby Doo&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">echo</span> <span class="s2">&quot;Scooby Doo isn&#39;t a robot!&quot;</span><span class="p">;</span>
-                    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="c1">// Attach an anonymous function as a listener for &quot;model&quot; events</span>
+        <span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span>
+            <span class="s1">&#39;collection&#39;</span><span class="p">,</span>
+            <span class="k">function</span> <span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$model</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$model</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Robots&#39;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getType</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;beforeSave&#39;</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nv">$model</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">==</span> <span class="s1">&#39;Scooby Doo&#39;</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">echo</span> <span class="s2">&quot;Scooby Doo isn&#39;t a robot!&quot;</span><span class="p">;</span>
+
+                            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
                 <span class="p">}</span>
+
+                <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
             <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-    <span class="p">});</span>
+        <span class="p">);</span>
 
-    <span class="c1">// Setting a default EventsManager</span>
-    <span class="nv">$modelsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CollectionManager</span><span class="p">();</span>
-    <span class="nv">$modelsManager</span><span class="o">-&gt;</span><span class="na">setEventsManager</span><span class="p">(</span><span class="nv">$eventsManager</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nv">$modelsManager</span><span class="p">;</span>
+        <span class="c1">// Setting a default EventsManager</span>
+        <span class="nv">$modelsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CollectionManager</span><span class="p">();</span>
 
-<span class="p">},</span> <span class="k">true</span><span class="p">);</span>
+        <span class="nv">$modelsManager</span><span class="o">-&gt;</span><span class="na">setEventsManager</span><span class="p">(</span><span class="nv">$eventsManager</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$modelsManager</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="k">true</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -645,6 +504,7 @@ connecting to: <span class="nb">test</span>
     <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">echo</span> <span class="s2">&quot;Year cannot be smaller than zero!&quot;</span><span class="p">;</span>
+
             <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -694,10 +554,49 @@ Phalcon提供了一些验证器可以用在此阶段的验证上。</p>
 </div>
 <p>上面的例子使用了内建的&#8221;InclusionIn&#8221;验证器。这个验证器检查了字段的类型是否在指定的范围内。如果值不在范围内即验证失败会返回false.
 下面支持的内验证器：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%"/>
+<col width="26%"/>
+<col width="61%"/>
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">解释</th>
+<th class="head">例子</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Email</td>
+<td>验证email是否正确</td>
+<td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Email.html"><em>Example</em></a></td>
+</tr>
+<tr class="row-odd"><td>ExclusionIn</td>
+<td>验证值是否不在指定的范围内</td>
+<td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Exclusionin.html"><em>Example</em></a></td>
+</tr>
+<tr class="row-even"><td>InclusionIn</td>
+<td>验证值是否在指定的范围内</td>
+<td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Inclusionin.html"><em>Example</em></a></td>
+</tr>
+<tr class="row-odd"><td>Numericality</td>
+<td>检查字段是否为数字型</td>
+<td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Numericality.html"><em>Example</em></a></td>
+</tr>
+<tr class="row-even"><td>Regex</td>
+<td>正则检查</td>
+<td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Regex.html"><em>Example</em></a></td>
+</tr>
+<tr class="row-odd"><td>StringLength</td>
+<td>检查字串长度</td>
+<td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_StringLength.html"><em>Example</em></a></td>
+</tr>
+</tbody>
+</table>
 <p>除了内建的验证器外，我们还可以创建自己的验证器：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">\Phalcon\Mvc\Model\Validator</span> <span class="k">as</span> <span class="nx">CollectionValidator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Model\Validator</span> <span class="k">as</span> <span class="nx">CollectionValidator</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">UrlValidator</span> <span class="k">extends</span> <span class="nx">CollectionValidator</span>
 <span class="p">{</span>
@@ -773,7 +672,7 @@ Phalcon提供了一些验证器可以用在此阶段的验证上。</p>
 </div>
 <div class="section" id="deleting-records">
 <h2>删除记录（Deleting Records）<a class="headerlink" href="#deleting-records" title="永久链接至标题">¶</a></h2>
-<p>Phalcon\Mvc\Collection::delete()方法用来删除记录条目。我们可以如下使用：</p>
+<p>:code:<a href="#id9"><span class="problematic" id="id10">`</span></a>Phalcon\Mvc\Collection::delete()`方法用来删除记录条目。我们可以如下使用：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">();</span>
@@ -792,9 +691,14 @@ Phalcon提供了一些验证器可以用在此阶段的验证上。</p>
 <p>也可以使用遍历的方式删除多个条目的数据：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
-<span class="nv">$robots</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-    <span class="k">array</span><span class="p">(</span><span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;mechanical&quot;</span><span class="p">)</span>
-<span class="p">));</span>
+<span class="nv">$robots</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">find</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;mechanical&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$robots</span> <span class="k">as</span> <span class="nv">$robot</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">()</span> <span class="o">==</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="s2">&quot;Sorry, we can&#39;t delete the robot right now: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
@@ -810,10 +714,10 @@ Phalcon提供了一些验证器可以用在此阶段的验证上。</p>
 <p>当删除操作执行时我们可以执行如下事件，以实现定制业务逻辑的目的：</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="13%"/>
-<col width="16%"/>
-<col width="24%"/>
-<col width="48%"/>
+<col width="11%"/>
+<col width="23%"/>
+<col width="22%"/>
+<col width="44%"/>
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">操作</th>
@@ -824,12 +728,12 @@ Phalcon提供了一些验证器可以用在此阶段的验证上。</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>删除</td>
-<td>beforeDelete</td>
+<td><code class="code docutils literal"><span class="pre">beforeDelete</span></code></td>
 <td>是</td>
 <td>删除之前执行</td>
 </tr>
 <tr class="row-odd"><td>删除</td>
-<td>afterDelete</td>
+<td><code class="code docutils literal"><span class="pre">afterDelete</span></code></td>
 <td>否</td>
 <td>删除之后执行</td>
 </tr>
@@ -841,9 +745,9 @@ Phalcon提供了一些验证器可以用在此阶段的验证上。</p>
 <p>验证失败时依据不同的情形下列事件会触发：</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="31%"/>
-<col width="31%"/>
+<col width="28%"/>
 <col width="38%"/>
+<col width="35%"/>
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">操作</th>
@@ -853,11 +757,11 @@ Phalcon提供了一些验证器可以用在此阶段的验证上。</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>插入和或更新</td>
-<td>notSave</td>
+<td><code class="code docutils literal"><span class="pre">notSave</span></code></td>
 <td>当插入/更新操作失败时触</td>
 </tr>
 <tr class="row-odd"><td>插入删除或更新</td>
-<td>onValidationFails</td>
+<td><code class="code docutils literal"><span class="pre">onValidationFails</span></code></td>
 <td>当数据操作失败时触发</td>
 </tr>
 </tbody>
@@ -887,16 +791,26 @@ Phalcon会从DI中取名为mongo的服务。当然我们可在模型的initializ
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="c1">// This service returns a mongo database at 192.168.1.100</span>
-<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;mongo1&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nv">$mongo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">(</span><span class="s2">&quot;mongodb://scott:nekhen@192.168.1.100&quot;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nv">$mongo</span><span class="o">-&gt;</span><span class="na">selectDB</span><span class="p">(</span><span class="s2">&quot;management&quot;</span><span class="p">);</span>
-<span class="p">},</span> <span class="k">true</span><span class="p">);</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s1">&#39;mongo1&#39;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$mongo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">(</span><span class="s2">&quot;mongodb://scott:nekhen@192.168.1.100&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$mongo</span><span class="o">-&gt;</span><span class="na">selectDB</span><span class="p">(</span><span class="s2">&quot;management&quot;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="k">true</span>
+<span class="p">);</span>
 
 <span class="c1">// This service returns a mongo database at localhost</span>
-<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;mongo2&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nv">$mongo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">(</span><span class="s2">&quot;mongodb://localhost&quot;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nv">$mongo</span><span class="o">-&gt;</span><span class="na">selectDB</span><span class="p">(</span><span class="s2">&quot;invoicing&quot;</span><span class="p">);</span>
-<span class="p">},</span> <span class="k">true</span><span class="p">);</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s1">&#39;mongo2&#39;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$mongo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">(</span><span class="s2">&quot;mongodb://localhost&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$mongo</span><span class="o">-&gt;</span><span class="na">selectDB</span><span class="p">(</span><span class="s2">&quot;invoicing&quot;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="k">true</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>然后在初始化方法，我们定义了模型的连接：</p>
@@ -965,79 +879,9 @@ Phalcon会从DI中取名为mongo的服务。当然我们可在模型的initializ
           <div class="col-sm-3 text-right">
               <span>Follow along:</span>
           </div>
-          <div class="col-sm-6 text-center">
-              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
-              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
-              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
-              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
-          </div>
-          <div class="col-sm-3">
-          </div>
       </div>
   </div>
 
 </div>
-<footer class="footer">
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-4 col-sm-3">
-              <h4>Download</h4>
-              <ul>
-                  <li><a href="http://phalconphp.com/download">Installing Phalcon</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://api.phalconphp.com">API</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-3">
-              <h4>Community</h4>
-              <ul>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
-                  <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
-                  <li><a href="http://phalconphp.com/en/testimonials">Testimonials</a></li>
-                  <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
-                  <li><a href="http://store.phalconphp.com/">Store</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-              <h4>About</h4>
-              <ul>
-                  <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                  <li><a href="http://phalconphp.com/en/team">Team</a></li>
-                  <li><a href="http://phalconphp.com/en/roadmap">Roadmap</a></li>
-                  <li><a href="http://phalconphp.com/en/donate">Donate</a></li>
-                  <li><a href="http://phalconphp.com/en/consulting">Consulting</a></li>
-                  <li><a href="http://phalconphp.com/en/hosting">Hosting</a></li>
-              </ul>
-          </div>
-          <div id="license-spaccer" class="visible-xs"></div>
-          <div id="license-wrapper" class="col-xs-12 col-sm-4">
-              <p class="license">
-
-                  Found a typo or an error? Want to improve this document? The documentation sources are available on <a href="http://github.com/phalcon/docs">Github</a><br>
-                  Need support or have questions? Check our <a href="http://forum.phalconphp.com">Forum</a><br>
-                  <br>
-
-                  Phalcon Framework is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">new BSD license</a>.<br>
-                  Except where otherwise noted, content on this site is licensed under the
-                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
-
-                <div class="design">
-                  <span>Designed by:</span>
-
-                  <a href="http://www.fog-city.net/" class="fogcity" target="_blank" title="Fog City Software"><span>Fog City Software</span></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</footer>
-
-    </div>
-
-
   </body>
 </html>

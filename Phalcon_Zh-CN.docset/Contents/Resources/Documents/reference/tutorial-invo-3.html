@@ -5,50 +5,19 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
-    <title>Tutorial 4: Using CRUDs &mdash; Phalcon 2.0.6 文档</title>
-    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../_static/phalcon.min.css"/>    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <title>Tutorial 4: Using CRUDs &mdash; Phalcon 2.0.8 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/><link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
     <link rel="stylesheet" href="../_static/docs.css" type="text/css"/>
-    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.6',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
+    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.8',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
 
     <script src="../_static/jquery.min.js"></script>
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Phalcon 2.0.6 文档" href="../index.html"/>
+    <link rel="top" title="Phalcon 2.0.8 文档" href="../index.html"/>
     <link rel="next" title="Tutorial 5: Customizing INVO" href="tutorial-invo-4.html"/>
     <link rel="prev" title="Tutorial 3: Securing INVO" href="tutorial-invo-2.html"/> 
   </head>
   <body>
-
-<header class="page-header">
-    <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
-                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
-                <ul class="nav navbar-nav main-menu">
-                  <li class="first"><a href="http://phalconphp.com/en/download" class="header-nav-link">Download</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </header>
-
 <div class="heading">
     <div class="container">
         <div class="row">
@@ -56,7 +25,6 @@
         </div>
     </div>
 </div>
-
     <div class="related">
       <ul>
         <li class="right">
@@ -66,7 +34,7 @@
         <li class="right">
           <a href="tutorial-invo-2.html" title="Tutorial 3: Securing INVO" accesskey="P">上一页</a> |</li>
         <li><a href="http://phalconphp.com">Home</a> &raquo;</li>
-        <li><a href="../index.html">Phalcon 2.0.6 文档</a> &raquo;</li> 
+        <li><a href="../index.html">Phalcon 2.0.8 文档</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -75,13 +43,11 @@
       <td class="primary-box" width="25%" valign="top">
             <div>
             <div id="searchbox" style="">
-
                 <div style="width:200px;padding:10px">
                   <gcse:searchbox-only></gcse:searchbox-only>
                 </div>
             </div>
             </div>
-            
             <h3><a href="../index.html">內容目录</a></h3>
             <ul>
 <li><a class="reference internal" href="#">Tutorial 4: Using CRUDs</a><ul>
@@ -140,7 +106,6 @@ using a basic and common <a class="reference external" href="http://en.wikipedia
 
 <span class="k">class</span> <span class="nc">ProductsController</span> <span class="k">extends</span> <span class="nx">ControllerBase</span>
 <span class="p">{</span>
-
     <span class="sd">/**</span>
 <span class="sd">     * The start action, it shows the &quot;search&quot; view</span>
 <span class="sd">     */</span>
@@ -197,7 +162,6 @@ using a basic and common <a class="reference external" href="http://en.wikipedia
     <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
-
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -214,7 +178,7 @@ In this case, we previously queried the records in this table in order to facili
 <span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">persistent</span><span class="o">-&gt;</span><span class="na">searchParams</span> <span class="o">=</span> <span class="k">null</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="o">-&gt;</span><span class="na">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProductsForm</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="o">-&gt;</span><span class="na">form</span>               <span class="o">=</span> <span class="k">new</span> <span class="nx">ProductsForm</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -232,13 +196,11 @@ This form defines the fields that are visible to the user:</p>
 
 <span class="k">class</span> <span class="nc">ProductsForm</span> <span class="k">extends</span> <span class="nx">Form</span>
 <span class="p">{</span>
-
     <span class="sd">/**</span>
 <span class="sd">     * Initialize the products form</span>
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">initialize</span><span class="p">(</span><span class="nv">$entity</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">())</span>
     <span class="p">{</span>
-
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;edit&#39;</span><span class="p">]))</span> <span class="p">{</span>
             <span class="nv">$element</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Text</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">);</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$element</span><span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="s2">&quot;Id&quot;</span><span class="p">));</span>
@@ -249,32 +211,46 @@ This form defines the fields that are visible to the user:</p>
         <span class="nv">$name</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Text</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">);</span>
         <span class="nv">$name</span><span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">);</span>
         <span class="nv">$name</span><span class="o">-&gt;</span><span class="na">setFilters</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;striptags&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">));</span>
-        <span class="nv">$name</span><span class="o">-&gt;</span><span class="na">addValidators</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-            <span class="k">new</span> <span class="nx">PresenceOf</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Name is required&#39;</span>
-            <span class="p">))</span>
-        <span class="p">));</span>
+        <span class="nv">$name</span><span class="o">-&gt;</span><span class="na">addValidators</span><span class="p">(</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="k">new</span> <span class="nx">PresenceOf</span><span class="p">(</span>
+                    <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Name is required&#39;</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$name</span><span class="p">);</span>
 
-        <span class="nv">$type</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="s1">&#39;profilesId&#39;</span><span class="p">,</span> <span class="nx">ProductTypes</span><span class="o">::</span><span class="na">find</span><span class="p">(),</span> <span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;using&#39;</span>      <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">),</span>
-            <span class="s1">&#39;useEmpty&#39;</span>   <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-            <span class="s1">&#39;emptyText&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;emptyValue&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span>
-        <span class="p">));</span>
+        <span class="nv">$type</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span>
+            <span class="s1">&#39;profilesId&#39;</span><span class="p">,</span>
+            <span class="nx">ProductTypes</span><span class="o">::</span><span class="na">find</span><span class="p">(),</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;using&#39;</span>      <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">),</span>
+                <span class="s1">&#39;useEmpty&#39;</span>   <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+                <span class="s1">&#39;emptyText&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;emptyValue&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$type</span><span class="p">);</span>
 
         <span class="nv">$price</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Text</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">);</span>
         <span class="nv">$price</span><span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="s2">&quot;Price&quot;</span><span class="p">);</span>
         <span class="nv">$price</span><span class="o">-&gt;</span><span class="na">setFilters</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">));</span>
-        <span class="nv">$price</span><span class="o">-&gt;</span><span class="na">addValidators</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-            <span class="k">new</span> <span class="nx">PresenceOf</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Price is required&#39;</span>
-            <span class="p">)),</span>
-            <span class="k">new</span> <span class="nx">Numericality</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Price is required&#39;</span>
-            <span class="p">))</span>
-        <span class="p">));</span>
+        <span class="nv">$price</span><span class="o">-&gt;</span><span class="na">addValidators</span><span class="p">(</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="k">new</span> <span class="nx">PresenceOf</span><span class="p">(</span>
+                    <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Price is required&#39;</span>
+                    <span class="p">)</span>
+                <span class="p">),</span>
+                <span class="k">new</span> <span class="nx">Numericality</span><span class="p">(</span>
+                    <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Price is required&#39;</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$price</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -294,11 +270,15 @@ Every element follows almost the same structure:</p>
 <span class="nv">$name</span><span class="o">-&gt;</span><span class="na">setFilters</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;striptags&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">));</span>
 
 <span class="c1">// Apply this validators</span>
-<span class="nv">$name</span><span class="o">-&gt;</span><span class="na">addValidators</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-    <span class="k">new</span> <span class="nx">PresenceOf</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Name is required&#39;</span>
-    <span class="p">))</span>
-<span class="p">));</span>
+<span class="nv">$name</span><span class="o">-&gt;</span><span class="na">addValidators</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nx">PresenceOf</span><span class="p">(</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Name is required&#39;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 
 <span class="c1">// Add the element to the form</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$name</span><span class="p">);</span>
@@ -314,15 +294,19 @@ Every element follows almost the same structure:</p>
 
 <span class="c1">// Add a HTML Select (list) to the form</span>
 <span class="c1">// and fill it with data from &quot;product_types&quot;</span>
-<span class="nv">$type</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span><span class="s1">&#39;profilesId&#39;</span><span class="p">,</span> <span class="nx">ProductTypes</span><span class="o">::</span><span class="na">find</span><span class="p">(),</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;using&#39;</span>      <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">),</span>
-    <span class="s1">&#39;useEmpty&#39;</span>   <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-    <span class="s1">&#39;emptyText&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;emptyValue&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span>
-<span class="p">));</span>
+<span class="nv">$type</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Select</span><span class="p">(</span>
+    <span class="s1">&#39;profilesId&#39;</span><span class="p">,</span>
+    <span class="nx">ProductTypes</span><span class="o">::</span><span class="na">find</span><span class="p">(),</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;using&#39;</span>      <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;useEmpty&#39;</span>   <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;emptyText&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;emptyValue&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
-<p>Note that ProductTypes::find() contains the data necessary to fill the SELECT tag using Phalcon\Tag::select.
+<p>Note that ProductTypes::find() contains the data necessary to fill the SELECT tag using <code class="code docutils literal"><span class="pre">Phalcon\\Tag::select</span></code>.
 Once the form is passed to the view, it can be rendered and presented to the user:</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">form</span><span class="o">(</span><span class="s2">&quot;products/search&quot;</span><span class="o">)</span> <span class="cp">}}</span>
 
@@ -402,7 +386,6 @@ we check it using the <a class="reference internal" href="request.html"><em>Requ
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">searchAction</span><span class="p">()</span>
 <span class="p">{</span>
-
     <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">isPost</span><span class="p">())</span> <span class="p">{</span>
         <span class="c1">// Create the query conditions</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -410,7 +393,6 @@ we check it using the <a class="reference internal" href="request.html"><em>Requ
     <span class="p">}</span>
 
     <span class="c1">// ...</span>
-
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -427,7 +409,7 @@ the search criteria:</p>
 <li>If the field data type is text or similar (char, varchar, text, etc.) It uses an SQL &#8220;like&#8221; operator to filter the results.</li>
 <li>If the data type is not text or similar, it&#8217;ll use the operator &#8220;=&#8221;.</li>
 </ul>
-<p>Additionally, &#8220;Criteria&#8221; ignores all the $_POST variables that do not match any field in the table.
+<p>Additionally, &#8220;Criteria&#8221; ignores all the <code class="code docutils literal"><span class="pre">$_POST</span></code> variables that do not match any field in the table.
 Values are automatically escaped using &#8220;bound parameters&#8221;.</p>
 <p>Now, we store the produced parameters in the controller&#8217;s session bag:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
@@ -456,11 +438,13 @@ search returned results, then we create a paginator to navigate easily through t
 
 <span class="c1">// ...</span>
 
-<span class="nv">$paginator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Paginator</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-    <span class="s2">&quot;data&quot;</span>  <span class="o">=&gt;</span> <span class="nv">$products</span><span class="p">,</span>    <span class="c1">// Data to paginate</span>
-    <span class="s2">&quot;limit&quot;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>            <span class="c1">// Rows per page</span>
-    <span class="s2">&quot;page&quot;</span>  <span class="o">=&gt;</span> <span class="nv">$numberPage</span>   <span class="c1">// Active page</span>
-<span class="p">));</span>
+<span class="nv">$paginator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Paginator</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s2">&quot;data&quot;</span>  <span class="o">=&gt;</span> <span class="nv">$products</span><span class="p">,</span>  <span class="c1">// Data to paginate</span>
+        <span class="s2">&quot;limit&quot;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>          <span class="c1">// Rows per page</span>
+        <span class="s2">&quot;page&quot;</span>  <span class="o">=&gt;</span> <span class="nv">$numberPage</span> <span class="c1">// Active page</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 
 <span class="c1">// Get active page in the paginator</span>
 <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$paginator</span><span class="o">-&gt;</span><span class="na">getPaginate</span><span class="p">();</span>
@@ -472,7 +456,7 @@ search returned results, then we create a paginator to navigate easily through t
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">view</span><span class="o">-&gt;</span><span class="na">page</span> <span class="o">=</span> <span class="nv">$page</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In the view (app/views/products/search.phtml), we traverse the results corresponding to the current page,
+<p>In the view (app/views/products/search.volt), we traverse the results corresponding to the current page,
 showing every row in the current page to the user:</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">product</span> <span class="k">in</span> <span class="nv">page.items</span> <span class="cp">%}</span>
   <span class="cp">{%</span> <span class="k">if</span> <span class="nb">loop</span><span class="nv">.first</span> <span class="cp">%}</span>
@@ -529,24 +513,19 @@ in the current page are traversed using a Volt&#8217;s &#8216;for&#8217;. Volt p
 </pre></div>
 </div>
 <p>The whole &#8216;for&#8217; block provides the following:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>{% for product in page.items %}</dt>
-<dd><dl class="first docutils">
-<dt>{% if loop.first %}</dt>
-<dd>Executed before the first product in the loop</dd>
-<dt>{% endif %}</dt>
-<dd>Executed for every product of page.items</dd>
-<dt>{% if loop.last %}</dt>
-<dd>Executed after the last product is loop</dd>
-</dl>
-<p class="last">{% endif %}</p>
-</dd>
-<dt>{% else %}</dt>
-<dd>Executed if page.items does not have any products</dd>
-</dl>
-<p>{% endfor %}</p>
-</div></blockquote>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">product</span> <span class="k">in</span> <span class="nv">page.items</span> <span class="cp">%}</span>
+  <span class="cp">{%</span> <span class="k">if</span> <span class="nb">loop</span><span class="nv">.first</span> <span class="cp">%}</span>
+    Executed before the first product in the loop
+  <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+    Executed for every product of page.items
+  <span class="cp">{%</span> <span class="k">if</span> <span class="nb">loop</span><span class="nv">.last</span> <span class="cp">%}</span>
+    Executed after the last product is loop
+  <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+  Executed if page.items does not have any products
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
+</div>
 <p>Now you can go back to the view and find out what every block is doing. Every field
 in &#8220;product&#8221; is printed accordingly:</p>
 <div class="highlight-html+jinja"><div class="highlight"><pre><span class="nt">&lt;tr&gt;</span>
@@ -560,7 +539,7 @@ in &#8220;product&#8221; is printed accordingly:</p>
   <span class="nt">&lt;/tr&gt;</span>
 </pre></div>
 </div>
-<p>As we seen before using product.id is the same as in PHP as doing: $product-&gt;id,
+<p>As we seen before using product.id is the same as in PHP as doing: <code class="code docutils literal"><span class="pre">$product-&gt;id</span></code>,
 we made the same with product.name and so on. Other fields are rendered differently,
 for instance, let&#8217;s focus in product.productTypes.name. To understand this part,
 we have to check the model Products (app/models/Products.php):</p>
@@ -580,9 +559,14 @@ we have to check the model Products (app/models/Products.php):</p>
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">initialize</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">belongsTo</span><span class="p">(</span><span class="s1">&#39;product_types_id&#39;</span><span class="p">,</span> <span class="s1">&#39;ProductTypes&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;reusable&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
-        <span class="p">));</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">belongsTo</span><span class="p">(</span>
+            <span class="s1">&#39;product_types_id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ProductTypes&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;reusable&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
     <span class="p">}</span>
 
     <span class="c1">// ...</span>
@@ -594,9 +578,14 @@ the ORM to initialize a model. In this case, &#8220;Products&#8221; is initializ
 has a one-to-many relationship to another model called &#8220;ProductTypes&#8221;.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">belongsTo</span><span class="p">(</span><span class="s1">&#39;product_types_id&#39;</span><span class="p">,</span> <span class="s1">&#39;ProductTypes&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;reusable&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
-<span class="p">));</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">belongsTo</span><span class="p">(</span>
+    <span class="s1">&#39;product_types_id&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ProductTypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;reusable&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>Which means, the local attribute &#8220;product_types_id&#8221; in &#8220;Products&#8221; has an one-to-many relation to
@@ -617,7 +606,7 @@ the product type by using:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;td&gt;{{ product.getActiveDetail() }}&lt;/td&gt;</span>
 </pre></div>
 </div>
-<p>This method is defined in the model:</p>
+<p>This method is defined in the model.</p>
 </div>
 <div class="section" id="creating-and-updating-records">
 <h3>Creating and Updating Records<a class="headerlink" href="#creating-and-updating-records" title="永久链接至标题">¶</a></h3>
@@ -627,7 +616,7 @@ are sent to the actions &#8220;create&#8221; and &#8220;save&#8221; that perform
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="sd">/**</span>
-<span class="sd"> * Creates a new product</span>
+<span class="sd"> * Creates a product based on the data entered in the &quot;new&quot; action</span>
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">createAction</span><span class="p">()</span>
 <span class="p">{</span>
@@ -638,11 +627,17 @@ are sent to the actions &#8220;create&#8221; and &#8220;save&#8221; that perform
     <span class="nv">$form</span>    <span class="o">=</span> <span class="k">new</span> <span class="nx">ProductsForm</span><span class="p">;</span>
     <span class="nv">$product</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Products</span><span class="p">();</span>
 
+    <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">id</span>               <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">);</span>
+    <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">product_types_id</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;product_types_id&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">);</span>
+    <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span>             <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;striptags&quot;</span><span class="p">);</span>
+    <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">price</span>            <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="s2">&quot;double&quot;</span><span class="p">);</span>
+    <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">active</span>           <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;active&quot;</span><span class="p">);</span>
+
     <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Remember the filters we defined in the Products form? Data is filtered before being assigned to the object $product.
+<p>Remember the filters we defined in the Products form? Data is filtered before being assigned to the object <code class="code docutils literal"><span class="pre">$product</span></code>.
 This filtering is optional, also the ORM escapes the input data and performs additional casting according to the column types:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -655,11 +650,15 @@ This filtering is optional, also the ORM escapes the input data and performs add
 <span class="nv">$name</span><span class="o">-&gt;</span><span class="na">setFilters</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;striptags&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">));</span>
 
 <span class="c1">// Validators for name</span>
-<span class="nv">$name</span><span class="o">-&gt;</span><span class="na">addValidators</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-        <span class="k">new</span> <span class="nx">PresenceOf</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-            <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Name is required&#39;</span>
-        <span class="p">))</span>
-<span class="p">));</span>
+<span class="nv">$name</span><span class="o">-&gt;</span><span class="na">addValidators</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nx">PresenceOf</span><span class="p">(</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Name is required&#39;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$name</span><span class="p">);</span>
 </pre></div>
@@ -692,6 +691,7 @@ in the form ProductsForm (app/forms/ProductsForm.php):</p>
     <span class="k">foreach</span> <span class="p">(</span><span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">flash</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
     <span class="p">}</span>
+
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forward</span><span class="p">(</span><span class="s1">&#39;products/new&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -709,12 +709,12 @@ in the form ProductsForm (app/forms/ProductsForm.php):</p>
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">editAction</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
 <span class="p">{</span>
-
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">isPost</span><span class="p">())</span> <span class="p">{</span>
 
         <span class="nv">$product</span> <span class="o">=</span> <span class="nx">Products</span><span class="o">::</span><span class="na">findFirstById</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$product</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">flash</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="s2">&quot;Product was not found&quot;</span><span class="p">);</span>
+
             <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forward</span><span class="p">(</span><span class="s2">&quot;products/index&quot;</span><span class="p">);</span>
         <span class="p">}</span>
 
@@ -728,9 +728,7 @@ the user can change any value and then sent it back to the database through to t
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="sd">/**</span>
-<span class="sd"> * Saves current product in screen</span>
-<span class="sd"> *</span>
-<span class="sd"> * @param string $id</span>
+<span class="sd"> * Updates a product based on the data entered in the &quot;edit&quot; action</span>
 <span class="sd"> */</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">saveAction</span><span class="p">()</span>
 <span class="p">{</span>
@@ -739,9 +737,11 @@ the user can change any value and then sent it back to the database through to t
     <span class="p">}</span>
 
     <span class="nv">$id</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">);</span>
+
     <span class="nv">$product</span> <span class="o">=</span> <span class="nx">Products</span><span class="o">::</span><span class="na">findFirstById</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$product</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">flash</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="s2">&quot;Product does not exist&quot;</span><span class="p">);</span>
+
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forward</span><span class="p">(</span><span class="s2">&quot;products/index&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -752,6 +752,7 @@ the user can change any value and then sent it back to the database through to t
         <span class="k">foreach</span> <span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">flash</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
         <span class="p">}</span>
+
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forward</span><span class="p">(</span><span class="s1">&#39;products/new&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -759,6 +760,7 @@ the user can change any value and then sent it back to the database through to t
         <span class="k">foreach</span> <span class="p">(</span><span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">flash</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
         <span class="p">}</span>
+
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forward</span><span class="p">(</span><span class="s1">&#39;products/new&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -800,79 +802,9 @@ In next chapter, we will see how to add custom HTML elements like a menu.</p>
           <div class="col-sm-3 text-right">
               <span>Follow along:</span>
           </div>
-          <div class="col-sm-6 text-center">
-              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
-              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
-              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
-              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
-          </div>
-          <div class="col-sm-3">
-          </div>
       </div>
   </div>
 
 </div>
-<footer class="footer">
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-4 col-sm-3">
-              <h4>Download</h4>
-              <ul>
-                  <li><a href="http://phalconphp.com/download">Installing Phalcon</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://api.phalconphp.com">API</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-3">
-              <h4>Community</h4>
-              <ul>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
-                  <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
-                  <li><a href="http://phalconphp.com/en/testimonials">Testimonials</a></li>
-                  <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
-                  <li><a href="http://store.phalconphp.com/">Store</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-              <h4>About</h4>
-              <ul>
-                  <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                  <li><a href="http://phalconphp.com/en/team">Team</a></li>
-                  <li><a href="http://phalconphp.com/en/roadmap">Roadmap</a></li>
-                  <li><a href="http://phalconphp.com/en/donate">Donate</a></li>
-                  <li><a href="http://phalconphp.com/en/consulting">Consulting</a></li>
-                  <li><a href="http://phalconphp.com/en/hosting">Hosting</a></li>
-              </ul>
-          </div>
-          <div id="license-spaccer" class="visible-xs"></div>
-          <div id="license-wrapper" class="col-xs-12 col-sm-4">
-              <p class="license">
-
-                  Found a typo or an error? Want to improve this document? The documentation sources are available on <a href="http://github.com/phalcon/docs">Github</a><br>
-                  Need support or have questions? Check our <a href="http://forum.phalconphp.com">Forum</a><br>
-                  <br>
-
-                  Phalcon Framework is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">new BSD license</a>.<br>
-                  Except where otherwise noted, content on this site is licensed under the
-                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
-
-                <div class="design">
-                  <span>Designed by:</span>
-
-                  <a href="http://www.fog-city.net/" class="fogcity" target="_blank" title="Fog City Software"><span>Fog City Software</span></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</footer>
-
-    </div>
-
-
   </body>
 </html>

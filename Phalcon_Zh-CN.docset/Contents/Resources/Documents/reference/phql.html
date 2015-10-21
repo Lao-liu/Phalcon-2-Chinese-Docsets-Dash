@@ -5,50 +5,19 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
-    <title>Phalcon 查询语言（Phalcon Query Language (PHQL)） &mdash; Phalcon 2.0.6 文档</title>
-    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../_static/phalcon.min.css"/>    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <title>Phalcon 查询语言（Phalcon Query Language (PHQL)） &mdash; Phalcon 2.0.8 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/><link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
     <link rel="stylesheet" href="../_static/docs.css" type="text/css"/>
-    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.6',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
+    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.8',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
 
     <script src="../_static/jquery.min.js"></script>
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Phalcon 2.0.6 文档" href="../index.html"/>
+    <link rel="top" title="Phalcon 2.0.8 文档" href="../index.html"/>
     <link rel="next" title="缓存对象关系映射（Caching in the ORM）" href="models-cache.html"/>
     <link rel="prev" title="事务管理（Model Transactions）" href="model-transactions.html"/> 
   </head>
   <body>
-
-<header class="page-header">
-    <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
-                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
-                <ul class="nav navbar-nav main-menu">
-                  <li class="first"><a href="http://phalconphp.com/en/download" class="header-nav-link">Download</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </header>
-
 <div class="heading">
     <div class="container">
         <div class="row">
@@ -56,7 +25,6 @@
         </div>
     </div>
 </div>
-
     <div class="related">
       <ul>
         <li class="right">
@@ -66,7 +34,7 @@
         <li class="right">
           <a href="model-transactions.html" title="事务管理（Model Transactions）" accesskey="P">上一页</a> |</li>
         <li><a href="http://phalconphp.com">Home</a> &raquo;</li>
-        <li><a href="../index.html">Phalcon 2.0.6 文档</a> &raquo;</li> 
+        <li><a href="../index.html">Phalcon 2.0.8 文档</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -75,13 +43,11 @@
       <td class="primary-box" width="25%" valign="top">
             <div>
             <div id="searchbox" style="">
-
                 <div style="width:200px;padding:10px">
                   <gcse:searchbox-only></gcse:searchbox-only>
                 </div>
             </div>
             </div>
-            
             <h3><a href="../index.html">內容目录</a></h3>
             <ul>
 <li><a class="reference internal" href="#">Phalcon 查询语言（Phalcon Query Language (PHQL)）</a><ul>
@@ -187,7 +153,6 @@ finally it converts it to the respective SQL dialect of the target RDBMS.</p>
 
 <span class="k">class</span> <span class="nc">Brands</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
-
     <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
 
     <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
@@ -229,14 +194,16 @@ finally it converts it to the respective SQL dialect of the target RDBMS.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="c1">// Executing a simple query</span>
-<span class="nv">$query</span>  <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modelsManager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Cars&quot;</span><span class="p">);</span>
-<span class="nv">$cars</span>   <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modelsManager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Cars&quot;</span><span class="p">);</span>
+<span class="nv">$cars</span>  <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 
 <span class="c1">// With bound parameters</span>
-<span class="nv">$query</span>  <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modelsManager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Cars WHERE name = :name:&quot;</span><span class="p">);</span>
-<span class="nv">$cars</span>   <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Audi&#39;</span>
-<span class="p">));</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modelsManager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Cars WHERE name = :name:&quot;</span><span class="p">);</span>
+<span class="nv">$cars</span>  <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Audi&#39;</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>Or simply execute it:</p>
@@ -264,17 +231,17 @@ finally it converts it to the respective SQL dialect of the target RDBMS.</p>
 <p>Classes in namespaces are also allowed:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
-<span class="nv">$phql</span>   <span class="o">=</span> <span class="s2">&quot;SELECT * FROM Formula\Cars ORDER BY Formula\Cars.name&quot;</span><span class="p">;</span>
-<span class="nv">$query</span>  <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
+<span class="nv">$phql</span>  <span class="o">=</span> <span class="s2">&quot;SELECT * FROM Formula\Cars ORDER BY Formula\Cars.name&quot;</span><span class="p">;</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
 
-<span class="nv">$phql</span>   <span class="o">=</span> <span class="s2">&quot;SELECT Formula\Cars.name FROM Formula\Cars ORDER BY Formula\Cars.name&quot;</span><span class="p">;</span>
-<span class="nv">$query</span>  <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
+<span class="nv">$phql</span>  <span class="o">=</span> <span class="s2">&quot;SELECT Formula\Cars.name FROM Formula\Cars ORDER BY Formula\Cars.name&quot;</span><span class="p">;</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
 
-<span class="nv">$phql</span>   <span class="o">=</span> <span class="s2">&quot;SELECT c.name FROM Formula\Cars c ORDER BY c.name&quot;</span><span class="p">;</span>
-<span class="nv">$query</span>  <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
+<span class="nv">$phql</span>  <span class="o">=</span> <span class="s2">&quot;SELECT c.name FROM Formula\Cars c ORDER BY c.name&quot;</span><span class="p">;</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Most of the SQL standard is supported by PHQL, even nonstandard directives as LIMIT:</p>
+<p>Most of the SQL standard is supported by PHQL, even nonstandard directives such as LIMIT:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$phql</span>   <span class="o">=</span> <span class="s2">&quot;SELECT c.name FROM Cars AS c &quot;</span>
@@ -298,7 +265,12 @@ a <a class="reference internal" href="../api/Phalcon_Mvc_Model_Resultset_Simple.
 <p>This is exactly the same as:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
-<span class="nv">$cars</span> <span class="o">=</span> <span class="nx">Cars</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">&quot;order&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span><span class="p">));</span>
+<span class="nv">$cars</span> <span class="o">=</span> <span class="nx">Cars</span><span class="o">::</span><span class="na">find</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s2">&quot;order&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;name&quot;</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$cars</span> <span class="k">as</span> <span class="nv">$car</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s2">&quot;Name: &quot;</span><span class="p">,</span> <span class="nv">$car</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -316,9 +288,9 @@ other types of queries that do not return complete objects, for example:</p>
 </pre></div>
 </div>
 <p>We are only requesting some fields in the table, therefore those cannot be considered an entire object, so the returned object is
-still a resulset of type <a class="reference internal" href="../api/Phalcon_Mvc_Model_Resultset_Simple.html"><em>Phalcon\Mvc\Model\Resultset\Simple</em></a>. However, each element is a standard
+still a resultset of type <a class="reference internal" href="../api/Phalcon_Mvc_Model_Resultset_Simple.html"><em>Phalcon\Mvc\Model\Resultset\Simple</em></a>. However, each element is a standard
 object that only contain the two columns that were requested.</p>
-<p>These values that don&#8217;t represent complete objects we call them scalars. PHQL allows you to query all types of scalars: fields, functions, literals, expressions, etc..:</p>
+<p>These values that don&#8217;t represent complete objects are what we call scalars. PHQL allows you to query all types of scalars: fields, functions, literals, expressions, etc..:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$phql</span> <span class="o">=</span> <span class="s2">&quot;SELECT CONCAT(c.id, &#39; &#39;, c.name) AS id_name FROM Cars AS c ORDER BY c.name&quot;</span><span class="p">;</span>
@@ -354,7 +326,7 @@ This allows access to both complete objects and scalars at once:</p>
 relationships in the models, PHQL adds these conditions automatically:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
-<span class="nv">$phql</span>  <span class="o">=</span> <span class="s2">&quot;SELECT Cars.name AS car_name, Brands.name AS brand_name FROM Cars JOIN Brands&quot;</span><span class="p">;</span>
+<span class="nv">$phql</span> <span class="o">=</span> <span class="s2">&quot;SELECT Cars.name AS car_name, Brands.name AS brand_name FROM Cars JOIN Brands&quot;</span><span class="p">;</span>
 <span class="nv">$rows</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$rows</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">car_name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
@@ -378,7 +350,7 @@ relationships in the models, PHQL adds these conditions automatically:</p>
 <span class="nv">$rows</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Also is possible set manually the conditions of the JOIN:</p>
+<p>It is also possible to manually set the conditions of the JOIN:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$phql</span> <span class="o">=</span> <span class="s2">&quot;SELECT Cars.*, Brands.* FROM Cars INNER JOIN Brands ON Brands.id = Cars.brands_id&quot;</span><span class="p">;</span>
@@ -526,7 +498,8 @@ relationships in the models, PHQL adds these conditions automatically:</p>
 <span class="c1">// Inserting using placeholders</span>
 <span class="nv">$phql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO Cars (name, brand_id, year, style) &quot;</span>
       <span class="o">.</span> <span class="s2">&quot;VALUES (:name:, :brand_id:, :year:, :style)&quot;</span><span class="p">;</span>
-<span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span>
+<span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span>
+    <span class="nv">$phql</span><span class="p">,</span>
     <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;name&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Lamborghini Espada&#39;</span><span class="p">,</span>
         <span class="s1">&#39;brand_id&#39;</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="p">,</span>
@@ -536,7 +509,7 @@ relationships in the models, PHQL adds these conditions automatically:</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Phalcon not just only transform the PHQL statements into SQL. All events and business rules defined
+<p>Phalcon doesn&#8217;t only transform the PHQL statements into SQL. All events and business rules defined
 in the model are executed as if we created individual objects manually. Let&#8217;s add a business rule
 on the model cars. A car cannot cost less than $ 10,000:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
@@ -546,29 +519,25 @@ on the model cars. A car cannot cost less than $ 10,000:</p>
 
 <span class="k">class</span> <span class="nc">Cars</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
-
     <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeCreate</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">price</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">)</span>
-        <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">price</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appendMessage</span><span class="p">(</span><span class="k">new</span> <span class="nx">Message</span><span class="p">(</span><span class="s2">&quot;A car cannot cost less than $ 10,000&quot;</span><span class="p">));</span>
             <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>If we made the following INSERT in the models Cars, the operation will not be successful
-because the price does not meet the business rule that we implemented:</p>
+because the price does not meet the business rule that we implemented. By checking the
+status of the insertion we can print any validation messages generated internally:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$phql</span>   <span class="o">=</span> <span class="s2">&quot;INSERT INTO Cars VALUES (NULL, &#39;Nissan Versa&#39;, 7, 9999.00, 2015, &#39;Sedan&#39;)&quot;</span><span class="p">;</span>
 <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">success</span><span class="p">()</span> <span class="o">==</span> <span class="k">false</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span>
-    <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">success</span><span class="p">()</span> <span class="o">==</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -596,11 +565,14 @@ will be executed for each row.</p>
 
 <span class="c1">// Using placeholders</span>
 <span class="nv">$phql</span> <span class="o">=</span> <span class="s2">&quot;UPDATE Cars SET price = ?0, type = ?1 WHERE brands_id &gt; ?2&quot;</span><span class="p">;</span>
-<span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-    <span class="mi">0</span> <span class="o">=&gt;</span> <span class="mf">7000.00</span><span class="p">,</span>
-    <span class="mi">1</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sedan&#39;</span><span class="p">,</span>
-    <span class="mi">2</span> <span class="o">=&gt;</span> <span class="mi">5</span>
-<span class="p">));</span>
+<span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span>
+    <span class="nv">$phql</span><span class="p">,</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="mi">0</span> <span class="o">=&gt;</span> <span class="mf">7000.00</span><span class="p">,</span>
+        <span class="mi">1</span> <span class="o">=&gt;</span> <span class="s1">&#39;Sedan&#39;</span><span class="p">,</span>
+        <span class="mi">2</span> <span class="o">=&gt;</span> <span class="mi">5</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>An UPDATE statement performs the update in two phases:</p>
@@ -612,8 +584,13 @@ will be executed for each row.</p>
 In summary, the following code:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
-<span class="nv">$phql</span>    <span class="o">=</span> <span class="s2">&quot;UPDATE Cars SET price = 15000.00 WHERE id &gt; 101&quot;</span><span class="p">;</span>
-<span class="nv">$success</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
+<span class="nv">$phql</span>   <span class="o">=</span> <span class="s2">&quot;UPDATE Cars SET price = 15000.00 WHERE id &gt; 101&quot;</span><span class="p">;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">success</span><span class="p">()</span> <span class="o">==</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>is somewhat equivalent to:</p>
@@ -660,7 +637,18 @@ In summary, the following code:</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>DELETE operations are also executed in two phases like UPDATEs.</p>
+<p>DELETE operations are also executed in two phases like UPDATEs. To check if the deletion produces
+any validation messages you should check the status code returned:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">// Deleting multiple rows</span>
+<span class="x">$phql = &quot;DELETE FROM Cars WHERE id &gt; 100&quot;;</span>
+<span class="x">$result = $manager-&gt;executeQuery($phql);</span>
+<span class="x">if ($result-&gt;success() == false) {</span>
+<span class="x">    foreach ($result-&gt;getMessages() as $message) {</span>
+<span class="x">        echo $message-&gt;getMessage();</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="creating-queries-using-the-query-builder">
 <h2>使用查询构建器创建查询（Creating queries using the Query Builder）<a class="headerlink" href="#creating-queries-using-the-query-builder" title="永久链接至标题">¶</a></h2>
@@ -687,8 +675,7 @@ In summary, the following code:</p>
 <p>That is the same as:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
-<span class="nv">$phql</span>   <span class="o">=</span> <span class="s2">&quot;SELECT Robots.*</span>
-<span class="s2">    FROM Robots JOIN RobotsParts p</span>
+<span class="nv">$phql</span>   <span class="o">=</span> <span class="s2">&quot;SELECT Robots.* FROM Robots JOIN RobotsParts p</span>
 <span class="s2">    ORDER BY Robots.name LIMIT 20&quot;</span><span class="p">;</span>
 <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">executeQuery</span><span class="p">(</span><span class="nv">$phql</span><span class="p">);</span>
 </pre></div>
@@ -700,7 +687,12 @@ In summary, the following code:</p>
 <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">);</span>
 
 <span class="c1">// &#39;SELECT Robots.*, RobotsParts.* FROM Robots, RobotsParts&#39;;</span>
-<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">,</span> <span class="s1">&#39;RobotsParts&#39;</span><span class="p">));</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;Robots&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;RobotsParts&#39;</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 
 <span class="c1">// &#39;SELECT * FROM Robots&#39;;</span>
 <span class="nv">$phql</span> <span class="o">=</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">columns</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
@@ -763,8 +755,8 @@ In summary, the following code:</p>
 <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">join</span><span class="p">(</span><span class="s1">&#39;RobotsParts&#39;</span><span class="p">,</span> <span class="s1">&#39;Robots.id = RobotsParts.robots_id&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">);</span>
 
-<span class="c1">// &#39;SELECT Robots.* FROM Robots ;</span>
-<span class="c1">// JOIN RobotsParts ON Robots.id = RobotsParts.robots_id AS p ;</span>
+<span class="c1">// &#39;SELECT Robots.* FROM Robots</span>
+<span class="c1">// JOIN RobotsParts ON Robots.id = RobotsParts.robots_id AS p</span>
 <span class="c1">// JOIN Parts ON Parts.id = RobotsParts.parts_id AS t&#39;;</span>
 <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;Robots&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">join</span><span class="p">(</span><span class="s1">&#39;RobotsParts&#39;</span><span class="p">,</span> <span class="s1">&#39;Robots.id = RobotsParts.robots_id&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span>
@@ -850,9 +842,7 @@ to potential SQL injections:</p>
 </pre></div>
 </div>
 <p>If $login is changed to &#8216; OR &#8216;&#8217; = &#8216;, the produced PHQL is:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-
-<span class="s2">&quot;SELECT * FROM Models\Users WHERE login = &#39;&#39; OR &#39;&#39; = &#39;&#39;&quot;</span>
+<div class="highlight-sql"><div class="highlight"><pre>SELECT * FROM Models\Users WHERE login = &#39;&#39; OR &#39;&#39; = &#39;&#39;
 </pre></div>
 </div>
 <p>Which is always true no matter what the login stored in the database is.</p>
@@ -870,7 +860,11 @@ secure way like this:</p>
 
 <span class="k">use</span> <span class="nx">Phalcon\Mvc\Model</span><span class="p">;</span>
 
-<span class="nx">Model</span><span class="o">::</span><span class="na">setup</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;phqlLiterals&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">));</span>
+<span class="nx">Model</span><span class="o">::</span><span class="na">setup</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;phqlLiterals&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span>
+    <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>Bound parameters can be used even if literals are allowed or not. Disallowing them is just
@@ -933,7 +927,7 @@ The following is the life cycle of each PHQL statement executed:</p>
 
 <span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">findByRawSql</span><span class="p">(</span><span class="nv">$conditions</span><span class="p">,</span> <span class="nv">$params</span><span class="o">=</span><span class="k">null</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">findByRawSql</span><span class="p">(</span><span class="nv">$conditions</span><span class="p">,</span> <span class="nv">$params</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// A raw SQL statement</span>
         <span class="nv">$sql</span>   <span class="o">=</span> <span class="s2">&quot;SELECT * FROM robots WHERE </span><span class="si">$conditions</span><span class="s2">&quot;</span><span class="p">;</span>
@@ -959,9 +953,9 @@ The following is the life cycle of each PHQL statement executed:</p>
 <p>Some things to keep in mind when using PHQL:</p>
 <ul class="simple">
 <li>Classes are case-sensitive, if a class is not defined with the same name as it was created this could lead to an unexpected behavior in operating systems with case-sensitive file systems such as Linux.</li>
-<li>Correct charset must be defined in the connection to bind parameters with success</li>
-<li>Aliased classes aren&#8217;t replaced by full namespaced classes since this only occurs in PHP code and not inside strings</li>
-<li>If column renaming is enabled avoid using column aliases with the same name as columns to be renamed, this may confuse the query resolver</li>
+<li>Correct charset must be defined in the connection to bind parameters with success.</li>
+<li>Aliased classes aren&#8217;t replaced by full namespaced classes since this only occurs in PHP code and not inside strings.</li>
+<li>If column renaming is enabled avoid using column aliases with the same name as columns to be renamed, this may confuse the query resolver.</li>
 </ul>
 </div>
 </div>
@@ -991,79 +985,9 @@ The following is the life cycle of each PHQL statement executed:</p>
           <div class="col-sm-3 text-right">
               <span>Follow along:</span>
           </div>
-          <div class="col-sm-6 text-center">
-              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
-              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
-              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
-              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
-          </div>
-          <div class="col-sm-3">
-          </div>
       </div>
   </div>
 
 </div>
-<footer class="footer">
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-4 col-sm-3">
-              <h4>Download</h4>
-              <ul>
-                  <li><a href="http://phalconphp.com/download">Installing Phalcon</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://api.phalconphp.com">API</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-3">
-              <h4>Community</h4>
-              <ul>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
-                  <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
-                  <li><a href="http://phalconphp.com/en/testimonials">Testimonials</a></li>
-                  <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
-                  <li><a href="http://store.phalconphp.com/">Store</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-              <h4>About</h4>
-              <ul>
-                  <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                  <li><a href="http://phalconphp.com/en/team">Team</a></li>
-                  <li><a href="http://phalconphp.com/en/roadmap">Roadmap</a></li>
-                  <li><a href="http://phalconphp.com/en/donate">Donate</a></li>
-                  <li><a href="http://phalconphp.com/en/consulting">Consulting</a></li>
-                  <li><a href="http://phalconphp.com/en/hosting">Hosting</a></li>
-              </ul>
-          </div>
-          <div id="license-spaccer" class="visible-xs"></div>
-          <div id="license-wrapper" class="col-xs-12 col-sm-4">
-              <p class="license">
-
-                  Found a typo or an error? Want to improve this document? The documentation sources are available on <a href="http://github.com/phalcon/docs">Github</a><br>
-                  Need support or have questions? Check our <a href="http://forum.phalconphp.com">Forum</a><br>
-                  <br>
-
-                  Phalcon Framework is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">new BSD license</a>.<br>
-                  Except where otherwise noted, content on this site is licensed under the
-                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
-
-                <div class="design">
-                  <span>Designed by:</span>
-
-                  <a href="http://www.fog-city.net/" class="fogcity" target="_blank" title="Fog City Software"><span>Fog City Software</span></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</footer>
-
-    </div>
-
-
   </body>
 </html>

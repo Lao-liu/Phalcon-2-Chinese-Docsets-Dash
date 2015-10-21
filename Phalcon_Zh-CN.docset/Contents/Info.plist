@@ -5,7 +5,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>Phalcon-zh</string>
 	<key>CFBundleName</key>
-	<string>Phalcon 2.6 中文文档</string>
+	<string>Phalcon 2.8 中文文档</string>
 	<key>DocSetPlatformFamily</key>
 	<string>phalcon</string>
 	<key>isDashDocset</key>

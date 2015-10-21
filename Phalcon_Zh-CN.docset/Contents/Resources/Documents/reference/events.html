@@ -5,50 +5,19 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
-    <title>事件管理器（Events Manager） &mdash; Phalcon 2.0.6 文档</title>
-    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../_static/phalcon.min.css"/>    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <title>事件管理器（Events Manager） &mdash; Phalcon 2.0.8 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/><link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
     <link rel="stylesheet" href="../_static/docs.css" type="text/css"/>
-    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.6',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
+    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.8',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
 
     <script src="../_static/jquery.min.js"></script>
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Phalcon 2.0.6 文档" href="../index.html"/>
+    <link rel="top" title="Phalcon 2.0.8 文档" href="../index.html"/>
     <link rel="next" title="Request Environment" href="request.html"/>
     <link rel="prev" title="使用命名空间（Working with Namespaces）" href="namespaces.html"/> 
   </head>
   <body>
-
-<header class="page-header">
-    <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
-                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
-                <ul class="nav navbar-nav main-menu">
-                  <li class="first"><a href="http://phalconphp.com/en/download" class="header-nav-link">Download</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </header>
-
 <div class="heading">
     <div class="container">
         <div class="row">
@@ -56,7 +25,6 @@
         </div>
     </div>
 </div>
-
     <div class="related">
       <ul>
         <li class="right">
@@ -66,7 +34,7 @@
         <li class="right">
           <a href="namespaces.html" title="使用命名空间（Working with Namespaces）" accesskey="P">上一页</a> |</li>
         <li><a href="http://phalconphp.com">Home</a> &raquo;</li>
-        <li><a href="../index.html">Phalcon 2.0.6 文档</a> &raquo;</li> 
+        <li><a href="../index.html">Phalcon 2.0.8 文档</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -75,13 +43,11 @@
       <td class="primary-box" width="25%" valign="top">
             <div>
             <div id="searchbox" style="">
-
                 <div style="width:200px;padding:10px">
                   <gcse:searchbox-only></gcse:searchbox-only>
                 </div>
             </div>
             </div>
-            
             <h3><a href="../index.html">內容目录</a></h3>
             <ul>
 <li><a class="reference internal" href="#">事件管理器（Events Manager）</a><ul>
@@ -192,7 +158,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>作为些示例的一部分，我们同样实现了 Phalcon\Db\Profiler 来检测SQL语句是否超出了期望的执行时间：</p>
+<p>作为些示例的一部分，我们同样实现了 <a class="reference internal" href="../api/Phalcon_Db_Profiler.html"><em>Phalcon\Db\Profiler</em></a> 来检测SQL语句是否超出了期望的执行时间：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Phalcon\Db\Profiler</span><span class="p">;</span>
@@ -256,7 +222,7 @@
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="c1">// 侦听全部数据加事件</span>
-<span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$connection</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$connection</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getType</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;afterQuery&#39;</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">getSQLStatement</span><span class="p">();</span>
     <span class="p">}</span>
@@ -268,7 +234,7 @@
 <h2>创建组件触发事件（Creating components that trigger Events）<a class="headerlink" href="#creating-components-that-trigger-events" title="永久链接至标题">¶</a></h2>
 <p>你可以在你的应用中为事件管理器的触发事件创建组件。这样的结果是，可以有很多存在的侦听者为这些产生的事件作出响应。
 在以下的示例中，我们将会创建一个叫做“MyComponent”组件。这是个意识事件管理器组件；
-当它的方法“someTask”被执行时它将触发事件管理器中全部侦听者的两个事件：</p>
+当它的方法:code:someTask()`被执行时它将触发事件管理器中全部侦听者的两个事件：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Phalcon\Events\EventsAwareInterface</span><span class="p">;</span>
@@ -292,6 +258,7 @@
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s2">&quot;my-component:beforeSomeTask&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
 
         <span class="c1">// 做一些你想做的事情</span>
+        <span class="k">echo</span> <span class="s2">&quot;这里, someTask</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s2">&quot;my-component:afterSomeTask&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
     <span class="p">}</span>
@@ -337,12 +304,13 @@
 <span class="nv">$myComponent</span><span class="o">-&gt;</span><span class="na">someTask</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>当“someTask”被执行时，在侦听者里面的两个方法将会被执行，并产生以下输出：</p>
+<p>当:code:someTask()`被执行时，在侦听者里面的两个方法将会被执行，并产生以下输出：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">这里, beforeSomeTask</span>
+<span class="x">这里, someTask</span>
 <span class="x">这里, afterSomeTask</span>
 </pre></div>
 </div>
-<p>当触发一个事件时也可以使用“fire”中的第三个参数来传递额外的数据：</p>
+<p>当触发一个事件时也可以使用:code:fire()`中的第三个参数来传递额外的数据：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s2">&quot;my-component:afterSomeTask&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">,</span> <span class="nv">$extraData</span><span class="p">);</span>
@@ -352,12 +320,12 @@
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="c1">// 从第三个参数接收数据</span>
-<span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;my-component&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$component</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;my-component&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$component</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">print_r</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// 从事件上下文中接收数据</span>
-<span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;my-component&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$component</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;my-component&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$event</span><span class="p">,</span> <span class="nv">$component</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">print_r</span><span class="p">(</span><span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
 <span class="p">});</span>
 </pre></div>
@@ -392,7 +360,7 @@
 </pre></div>
 </div>
 <p>默认情况下全部的事件都是可以取消的，甚至框架提供的事件也是可以取消的。
-你可以通过在fire中的第四个参数中传递false来指明这是一个不可取消的事件：</p>
+你可以通过在:code:fire()`中的第四个参数中传递:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>false`来指明这是一个不可取消的事件：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s2">&quot;my-component:afterSomeTask&quot;</span><span class="p">,</span> <span class="nv">$this</span><span class="p">,</span> <span class="nv">$extraData</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
@@ -406,9 +374,9 @@
 
 <span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">enablePriorities</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 
-<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">150</span><span class="p">);</span> <span class="c1">// 高优先级</span>
-<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// 正常优先级</span>
-<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">50</span><span class="p">);</span>  <span class="c1">// 低优先级</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">150</span><span class="p">);</span> <span class="c1">// 高优先级</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// 正常优先级</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DbListener</span><span class="p">(),</span> <span class="mi">50</span><span class="p">);</span>  <span class="c1">// 低优先级</span>
 </pre></div>
 </div>
 </div>
@@ -419,26 +387,26 @@
 
 <span class="k">use</span> <span class="nx">Phalcon\Events\Manager</span> <span class="k">as</span> <span class="nx">EventsManager</span><span class="p">;</span>
 
-<span class="nv">$evManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
+<span class="nv">$eventsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
 
 <span class="c1">// 建立事件管理器以为收集结果响应</span>
-<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">collectResponses</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">collectResponses</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 
 <span class="c1">// 附上一个侦听者</span>
-<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s1">&#39;first response&#39;</span><span class="p">;</span>
 <span class="p">});</span>
 
 <span class="c1">// 附上一个侦听者</span>
-<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s1">&#39;second response&#39;</span><span class="p">;</span>
 <span class="p">});</span>
 
 <span class="c1">// 执行fire事件</span>
-<span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">fire</span><span class="p">(</span><span class="s1">&#39;custom:custom&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
 
 <span class="c1">// 获取全部收集到的响应</span>
-<span class="nb">print_r</span><span class="p">(</span><span class="nv">$evManager</span><span class="o">-&gt;</span><span class="na">getResponses</span><span class="p">());</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">getResponses</span><span class="p">());</span>
 </pre></div>
 </div>
 <p>上面示例将输出：</p>
@@ -477,79 +445,9 @@
           <div class="col-sm-3 text-right">
               <span>Follow along:</span>
           </div>
-          <div class="col-sm-6 text-center">
-              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
-              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
-              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
-              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
-          </div>
-          <div class="col-sm-3">
-          </div>
       </div>
   </div>
 
 </div>
-<footer class="footer">
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-4 col-sm-3">
-              <h4>Download</h4>
-              <ul>
-                  <li><a href="http://phalconphp.com/download">Installing Phalcon</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://api.phalconphp.com">API</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-3">
-              <h4>Community</h4>
-              <ul>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
-                  <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
-                  <li><a href="http://phalconphp.com/en/testimonials">Testimonials</a></li>
-                  <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
-                  <li><a href="http://store.phalconphp.com/">Store</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-              <h4>About</h4>
-              <ul>
-                  <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                  <li><a href="http://phalconphp.com/en/team">Team</a></li>
-                  <li><a href="http://phalconphp.com/en/roadmap">Roadmap</a></li>
-                  <li><a href="http://phalconphp.com/en/donate">Donate</a></li>
-                  <li><a href="http://phalconphp.com/en/consulting">Consulting</a></li>
-                  <li><a href="http://phalconphp.com/en/hosting">Hosting</a></li>
-              </ul>
-          </div>
-          <div id="license-spaccer" class="visible-xs"></div>
-          <div id="license-wrapper" class="col-xs-12 col-sm-4">
-              <p class="license">
-
-                  Found a typo or an error? Want to improve this document? The documentation sources are available on <a href="http://github.com/phalcon/docs">Github</a><br>
-                  Need support or have questions? Check our <a href="http://forum.phalconphp.com">Forum</a><br>
-                  <br>
-
-                  Phalcon Framework is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">new BSD license</a>.<br>
-                  Except where otherwise noted, content on this site is licensed under the
-                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
-
-                <div class="design">
-                  <span>Designed by:</span>
-
-                  <a href="http://www.fog-city.net/" class="fogcity" target="_blank" title="Fog City Software"><span>Fog City Software</span></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</footer>
-
-    </div>
-
-
   </body>
 </html>

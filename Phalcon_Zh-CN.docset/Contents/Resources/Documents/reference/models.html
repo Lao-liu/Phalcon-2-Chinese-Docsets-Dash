@@ -5,50 +5,19 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
-    <title>使用模型（Working with Models） &mdash; Phalcon 2.0.6 文档</title>
-    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../_static/phalcon.min.css"/>    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <title>使用模型（Working with Models） &mdash; Phalcon 2.0.8 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework"><link rel="stylesheet" type="text/css" href="../_static/bootstrap.min.css"/><link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
     <link rel="stylesheet" href="../_static/docs.css" type="text/css"/>
-    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.6',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
+    <script type="text/javascript">var DOCUMENTATION_OPTIONS={URL_ROOT:'../',VERSION:'2.0.8',COLLAPSE_MODINDEX:false,FILE_SUFFIX:'.html',HAS_SOURCE:true};</script>
 
     <script src="../_static/jquery.min.js"></script>
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Phalcon 2.0.6 文档" href="../index.html"/>
+    <link rel="top" title="Phalcon 2.0.8 文档" href="../index.html"/>
     <link rel="next" title="模型元数据（Models Meta-Data）" href="models-metadata.html"/>
     <link rel="prev" title="使用控制器（Using Controllers）" href="controllers.html"/> 
   </head>
   <body>
-
-<header class="page-header">
-    <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
-                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
-                <ul class="nav navbar-nav main-menu">
-                  <li class="first"><a href="http://phalconphp.com/en/download" class="header-nav-link">Download</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="http://blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </header>
-
 <div class="heading">
     <div class="container">
         <div class="row">
@@ -56,7 +25,6 @@
         </div>
     </div>
 </div>
-
     <div class="related">
       <ul>
         <li class="right">
@@ -66,7 +34,7 @@
         <li class="right">
           <a href="controllers.html" title="使用控制器（Using Controllers）" accesskey="P">上一页</a> |</li>
         <li><a href="http://phalconphp.com">Home</a> &raquo;</li>
-        <li><a href="../index.html">Phalcon 2.0.6 文档</a> &raquo;</li> 
+        <li><a href="../index.html">Phalcon 2.0.8 文档</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -75,13 +43,11 @@
       <td class="primary-box" width="25%" valign="top">
             <div>
             <div id="searchbox" style="">
-
                 <div style="width:200px;padding:10px">
                   <gcse:searchbox-only></gcse:searchbox-only>
                 </div>
             </div>
             </div>
-            
             <h3><a href="../index.html">內容目录</a></h3>
             <ul>
 <li><a class="reference internal" href="#">使用模型（Working with Models）</a><ul>
@@ -201,7 +167,7 @@
 因此，Robots 模型拥有了大量继承自该组件功能，包括基本的数据库 CRUD (Create, Read, Update, Delete) 操作，数据验证以及复杂的搜索支持，并且可以同时关联多个模型。</p>
 <blockquote class="highlights">
 <div>如果使用 PHP 5.4/5.5 建议在模型中预先定义好所有的列，这样可以减少模型内存的开销以及内存分配。</div></blockquote>
-<p>默认情况下，模型 &#8220;Robots&#8221; 对应的是数据库表 &#8220;robots&#8221;， 如果想映射到其他数据库表，可以使用 getSource() 方法：</p>
+<p>默认情况下，模型 &#8220;Robots&#8221; 对应的是数据库表 &#8220;robots&#8221;， 如果想映射到其他数据库表，可以使用 <code class="code docutils literal"><span class="pre">getSource()</span></code> 方法：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Phalcon\Mvc\Model</span><span class="p">;</span>
@@ -215,8 +181,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>模型 Robots 现在映射到了 &#8220;the_robots&#8221; 表。initialize() 方法可以帮助在模型中建立自定义行为，例如指定不同的数据库表。
-initialize() 方法在请求期间只被调用一次。</p>
+<p>模型 Robots 现在映射到了 &#8220;the_robots&#8221; 表。<code class="code docutils literal"><span class="pre">initialize()</span></code> 方法可以帮助在模型中建立自定义行为，例如指定不同的数据库表。
+<code class="code docutils literal"><span class="pre">initialize()</span></code> 方法在请求期间只被调用一次。</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Phalcon\Mvc\Model</span><span class="p">;</span>
@@ -230,7 +196,7 @@ initialize() 方法在请求期间只被调用一次。</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>initialize() 方法在请求期间仅会被调用一次，目的是为应用中所有该模型的实例进行初始化。如果需要为每一个实例在创建的时候单独进行初始化，
+<p><code class="code docutils literal"><span class="pre">initialize()</span></code> 方法在请求期间仅会被调用一次，目的是为应用中所有该模型的实例进行初始化。如果需要为每一个实例在创建的时候单独进行初始化，
 可以使用 &#8216;onConstruct&#8217; 事件：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -425,7 +391,7 @@ initialize() 方法在请求期间只被调用一次。</p>
 </div>
 <blockquote class="highlights">
 <div>If you want find record by external data (such as user input) or variable data you must use <a href="#id2"><span class="problematic" id="id3">`Binding Parameters`_</span></a>.</div></blockquote>
-<p>你可以使用 findFirst() 方法获取第一条符合查询条件的结果：</p>
+<p>你可以使用 <code class="code docutils literal"><span class="pre">findFirst()</span></code> 方法获取第一条符合查询条件的结果：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="c1">// What&#39;s the first robot in robots table?</span>
@@ -446,7 +412,7 @@ initialize() 方法在请求期间只被调用一次。</p>
 <span class="k">echo</span> <span class="s2">&quot;The first virtual robot name is &quot;</span><span class="p">,</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>find() 和 findFirst() 方法都接受关联数组作为查询条件：</p>
+<p><code class="code docutils literal"><span class="pre">find()</span></code> 和 <code class="code docutils literal"><span class="pre">findFirst()</span></code> 方法都接受关联数组作为查询条件：</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">(</span>
@@ -477,7 +443,7 @@ initialize() 方法在请求期间只被调用一次。</p>
     <span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>静态方法 query() 返回一个对IDE自动完成友好的 <a class="reference internal" href="../api/Phalcon_Mvc_Model_Criteria.html"><em>Phalcon\Mvc\Model\Criteria</em></a>  对象。</p>
+<p>静态方法 <code class="code docutils literal"><span class="pre">query()</span></code> 返回一个对IDE自动完成友好的 <a class="reference internal" href="../api/Phalcon_Mvc_Model_Criteria.html"><em>Phalcon\Mvc\Model\Criteria</em></a>  对象。</p>
 <p>所有查询在内部都以 <a class="reference internal" href="phql.html"><em>PHQL</em></a> 查询的方式处理。PHQL是一个高层的、面向对象的类SQL语言。通过PHQL语言你可以使用更多的比如join其他模型、定义分组、添加聚集等特性。</p>
 <p>最后，还有一个 findFirstBy&lt;property-name&gt;() 方法。这个方法扩展了前面提及的 &#8220;findFirst()&#8221; 方法。它允许您利用方法名中的属性名称，通过将要搜索的该字段的内容作为参数传给它，来快速从一个表执行检索操作。</p>
 <p>还是用上面用过的 Robots 模型来举例说明：</p>
@@ -511,7 +477,7 @@ initialize() 方法在请求期间只被调用一次。</p>
 <p>请注意我们在方法调用中用的是 &#8216;Name&#8217;，并向它传递了变量 $name，$name 的值就是我们想要找的记录的名称。另外注意，当我们的查询找到了符合的记录后，这个记录的其他属性也都是可用的。</p>
 <div class="section" id="model-resultsets">
 <h3>模型结果集（Model Resultsets）<a class="headerlink" href="#model-resultsets" title="永久链接至标题">¶</a></h3>
-<p>findFirst() 方法直接返回一个被调用对象的实例（如果有结果返回的话），而 find() 方法返回一个 <a class="reference internal" href="../api/Phalcon_Mvc_Model_Resultset_Simple.html"><em>Phalcon\Mvc\Model\Resultset\Simple</em></a> 对象。这个对象也封装进了所有结果集的功能，比如遍历、查找特定的记录、统计等等。</p>
+<p><code class="code docutils literal"><span class="pre">findFirst()</span></code> 方法直接返回一个被调用对象的实例（如果有结果返回的话），而 <code class="code docutils literal"><span class="pre">find()</span></code> 方法返回一个 <a class="reference internal" href="../api/Phalcon_Mvc_Model_Resultset_Simple.html"><em>Phalcon\Mvc\Model\Resultset\Simple</em></a> 对象。这个对象也封装进了所有结果集的功能，比如遍历、查找特定的记录、统计等等。</p>
 <p>这些对象比一般数组功能更强大。最大的特点是 <a class="reference internal" href="../api/Phalcon_Mvc_Model_Resultset.html"><em>Phalcon\Mvc\Model\Resultset</em></a> 每时每刻只有一个结果在内存中。这对操作大数据量时的内存管理相当有帮助。</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -702,8 +668,8 @@ when storing or retrieving data.</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Bound parameters are available for all query methods such as find() and findFirst() but also the calculation
-methods like count(), sum(), average() etc.</p>
+<p>Bound parameters are available for all query methods such as <code class="code docutils literal"><span class="pre">find()</span></code> and <code class="code docutils literal"><span class="pre">findFirst()</span></code> but also the calculation
+methods like <code class="code docutils literal"><span class="pre">count()</span></code>, <code class="code docutils literal"><span class="pre">sum()</span></code>, <code class="code docutils literal"><span class="pre">average()</span></code> etc.</p>
 <p>If you&#8217;re using &#8220;finders&#8221;, bound parameters are automatically used for you:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -745,6 +711,12 @@ will be executed just after create the instance and assign the data to it:</p>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">afterFetch</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Convert the string to an array</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">status</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">status</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterSave</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// Convert the string to an array</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">status</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">status</span><span class="p">);</span>
@@ -792,8 +764,8 @@ it is easy to access data in related models from each record in a uniform way.</
 </div>
 <div class="section" id="defining-relationships">
 <h3>定义关系（Defining relationships）<a class="headerlink" href="#defining-relationships" title="永久链接至标题">¶</a></h3>
-<p>In Phalcon, relationships must be defined in the initialize() method of a model. The methods belongsTo(), hasOne(),
-hasMany() and hasManyToMany() define the relationship between one or more fields from the current model to fields in
+<p>In Phalcon, relationships must be defined in the <code class="code docutils literal"><span class="pre">initialize()</span></code> method of a model. The methods <code class="code docutils literal"><span class="pre">belongsTo()</span></code>, <code class="code docutils literal"><span class="pre">hasOne()</span></code>,
+<code class="code docutils literal"><span class="pre">hasMany()</span></code> and <code class="code docutils literal"><span class="pre">hasManyToMany()</span></code> define the relationship between one or more fields from the current model to fields in
 another model. Each of these methods requires 3 parameters: local fields, referenced model, referenced fields.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -855,7 +827,7 @@ another model. Each of these methods requires 3 parameters: local fields, refere
 <p>Check the EER diagram to understand better the relations:</p>
 <div class="figure align-center">
 <script pagespeed_no_defer="">//<![CDATA[
-(function(){var g=this,h=function(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};var l=function(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};var m=function(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n,p=function(b,d,a,c,e){this.f=b;this.h=d;this.i=a;this.c=e;this.e={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.g=c;this.b={};this.a=[];this.d={}},q=function(b,d){var a,c,e=d.getAttribute("pagespeed_url_hash");if(a=e&&!(e in b.d))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.e.height&&c<=b.e.width)}a&&(b.a.push(e),b.d[e]=!0)};p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});var r=function(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.i;b.c&&(a+="&n="+b.c);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.g&&(e="&rd="+encodeURIComponent(JSON.stringify(s())),131072>=a.length+e.length&&(a+=e),d=!0);t=a;if(d){c=b.f;b=b.h;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(u){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}},s=function(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("pagespeed_url_hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].k&&a.height>=b[e].j)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b},t="";h("pagespeed.CriticalImages.getBeaconData",function(){return t});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://docs.phalconphp.com/zh/latest/reference/models.html','SLoDkQnME-',true,false,'2etJhREsB4c');
+(function(){var g=this,h=function(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};var l=function(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};var m=function(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n,p=function(b,d,a,c,e){this.f=b;this.h=d;this.i=a;this.c=e;this.e={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.g=c;this.b={};this.a=[];this.d={}},q=function(b,d){var a,c,e=d.getAttribute("pagespeed_url_hash");if(a=e&&!(e in b.d))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.e.height&&c<=b.e.width)}a&&(b.a.push(e),b.d[e]=!0)};p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});var r=function(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.i;b.c&&(a+="&n="+b.c);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.g&&(e="&rd="+encodeURIComponent(JSON.stringify(s())),131072>=a.length+e.length&&(a+=e),d=!0);t=a;if(d){c=b.f;b=b.h;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(u){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}},s=function(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("pagespeed_url_hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].k&&a.height>=b[e].j)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b},t="";h("pagespeed.CriticalImages.getBeaconData",function(){return t});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://docs.phalconphp.com/zh/latest/reference/models.html','SLoDkQnME-',true,false,'qmTpJw8IZWw');
 //]]></script><img alt="../_images/eer-1.png" src="../_images/eer-1.png" pagespeed_url_hash="3471299543" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
 </div>
 <p>The models with their relations could be implemented as follows:</p>
@@ -968,7 +940,7 @@ of the referenced model and the third the field name in the referenced model. Yo
 </pre></div>
 </div>
 <p>If the called method has a &#8220;get&#8221; prefix <a class="reference internal" href="../api/Phalcon_Mvc_Model.html"><em>Phalcon\Mvc\Model</em></a> will return a
-findFirst()/find() result. The following example compares retrieving related results with using magic methods
+<code class="code docutils literal"><span class="pre">findFirst()</span></code>/<code class="code docutils literal"><span class="pre">find()</span></code> result. The following example compares retrieving related results with using magic methods
 and without:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -1019,7 +991,7 @@ and without:</p>
 <span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">(</span><span class="s2">&quot;id = &#39;&quot;</span> <span class="o">.</span> <span class="nv">$robotPart</span><span class="o">-&gt;</span><span class="na">robots_id</span> <span class="o">.</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The prefix &#8220;get&#8221; is used to find()/findFirst() related records. Depending on the type of relation it will use
+<p>The prefix &#8220;get&#8221; is used to <code class="code docutils literal"><span class="pre">find()</span></code>/<code class="code docutils literal"><span class="pre">findFirst()</span></code> related records. Depending on the type of relation it will use
 &#8216;find&#8217; or &#8216;findFirst&#8217;:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1228,8 +1200,8 @@ when defining a relationship.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>If you alter a belongsTo() relationship to act as foreign key, it will validate that the values inserted/updated on those fields have a
-valid value on the referenced model. Similarly, if a hasMany()/hasOne() is altered it will validate that the records cannot be deleted
+<p>If you alter a <code class="code docutils literal"><span class="pre">belongsTo()</span></code> relationship to act as foreign key, it will validate that the values inserted/updated on those fields have a
+valid value on the referenced model. Similarly, if a <code class="code docutils literal"><span class="pre">hasMany()</span></code>/<code class="code docutils literal"><span class="pre">hasOne()</span></code> is altered it will validate that the records cannot be deleted
 if that record is used on a referenced model.</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -1534,7 +1506,7 @@ returned in a resultset is called &#8216;hydration mode&#8217;:</p>
 </div>
 <div class="section" id="creating-updating-records">
 <h2>创建与更新记录（Creating Updating/Records）<a class="headerlink" href="#creating-updating-records" title="永久链接至标题">¶</a></h2>
-<p>The method Phalcon\Mvc\Model::save() allows you to create/update records according to whether they already exist in the table
+<p>The method <code class="code docutils literal"><span class="pre">Phalcon\\Mvc\\Model::save()</span></code> allows you to create/update records according to whether they already exist in the table
 associated with a model. The save method is called internally by the create and update methods of <a class="reference internal" href="../api/Phalcon_Mvc_Model.html"><em>Phalcon\Mvc\Model</em></a>.
 For this to work as expected it is necessary to have properly defined a primary key in the entity to determine whether a record
 should be updated or created.</p>
@@ -1601,8 +1573,8 @@ the mass assignment:</p>
 <div class="section" id="create-update-with-confidence">
 <h3>创建与更新结果判断（Create/Update with Confidence）<a class="headerlink" href="#create-update-with-confidence" title="永久链接至标题">¶</a></h3>
 <p>When an application has a lot of competition, we could be expecting create a record but it is actually updated. This
-could happen if we use Phalcon\Mvc\Model::save() to persist the records in the database. If we want to be absolutely
-sure that a record is created or updated, we can change the save() call with create() or update():</p>
+could happen if we use <code class="code docutils literal"><span class="pre">Phalcon\\Mvc\\Model::save()</span></code> to persist the records in the database. If we want to be absolutely
+sure that a record is created or updated, we can change the <code class="code docutils literal"><span class="pre">save()</span></code> call with <code class="code docutils literal"><span class="pre">create()</span></code> or <code class="code docutils literal"><span class="pre">update()</span></code>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$robot</span>       <span class="o">=</span> <span class="k">new</span> <span class="nx">Robots</span><span class="p">();</span>
@@ -1709,19 +1681,19 @@ passed back to the user for information regarding any errors.</p>
 <p>Note: Adding related entities by overloading the following methods is not possible:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Phalcon\Mvc\Model::beforeSave()</li>
-<li>Phalcon\Mvc\Model::beforeCreate()</li>
-<li>Phalcon\Mvc\Model::beforeUpdate()</li>
+<li><code class="code docutils literal"><span class="pre">Phalcon\\Mvc\\Model::beforeSave()</span></code></li>
+<li><code class="code docutils literal"><span class="pre">Phalcon\\Mvc\\Model::beforeCreate()</span></code></li>
+<li><code class="code docutils literal"><span class="pre">Phalcon\\Mvc\\Model::beforeUpdate()</span></code></li>
 </ul>
 </div></blockquote>
-<p>You need to overload PhalconMvcModel::save() for this to work from within a model.</p>
+<p>You need to overload <code class="code docutils literal"><span class="pre">Phalcon\Mvc\Model::save()</span></code> for this to work from within a model.</p>
 </div>
 <div class="section" id="validation-messages">
 <h3>验证信息（Validation Messages）<a class="headerlink" href="#validation-messages" title="永久链接至标题">¶</a></h3>
 <p><a class="reference internal" href="../api/Phalcon_Mvc_Model.html"><em>Phalcon\Mvc\Model</em></a> has a messaging subsystem that provides a flexible way to output or store the
 validation messages generated during the insert/update processes.</p>
 <p>Each message consists of an instance of the class <a class="reference internal" href="../api/Phalcon_Mvc_Model_Message.html"><em>Phalcon\Mvc\Model\Message</em></a>. The set of
-messages generated can be retrieved with the method getMessages(). Each message provides extended information like the field name that
+messages generated can be retrieved with the <code class="code docutils literal"><span class="pre">getMessages()</span></code> method. Each message provides extended information like the field name that
 generated the message or the message type:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
@@ -1763,7 +1735,7 @@ generated the message or the message type:</p>
 </tr>
 </tbody>
 </table>
-<p>The method getMessages() can be overridden in a model to replace/translate the default messages generated automatically by the ORM:</p>
+<p>The <code class="code docutils literal"><span class="pre">getMessages()</span></code> method can be overridden in a model to replace/translate the default messages generated automatically by the ORM:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Phalcon\Mvc\Model</span><span class="p">;</span>
@@ -2352,7 +2324,7 @@ this specially helps when the table has blob/text fields:</p>
 </div>
 <div class="section" id="deleting-records">
 <h2>删除记录（Deleting Records）<a class="headerlink" href="#deleting-records" title="永久链接至标题">¶</a></h2>
-<p>The method Phalcon\Mvc\Model::delete() allows to delete a record. You can use it as follows:</p>
+<p>The method <code class="code docutils literal"><span class="pre">Phalcon\\Mvc\\Model::delete()</span></code> allows to delete a record. You can use it as follows:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 
 <span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
@@ -3366,79 +3338,9 @@ According to how you use the ORM you can disable that you aren&#8217;t using. Th
           <div class="col-sm-3 text-right">
               <span>Follow along:</span>
           </div>
-          <div class="col-sm-6 text-center">
-              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
-              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
-              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
-              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
-          </div>
-          <div class="col-sm-3">
-          </div>
       </div>
   </div>
 
 </div>
-<footer class="footer">
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-4 col-sm-3">
-              <h4>Download</h4>
-              <ul>
-                  <li><a href="http://phalconphp.com/download">Installing Phalcon</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
-                  <li><a href="http://api.phalconphp.com">API</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
-                  <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-3">
-              <h4>Community</h4>
-              <ul>
-                  <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
-                  <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
-                  <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
-                  <li><a href="http://phalconphp.com/en/testimonials">Testimonials</a></li>
-                  <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
-                  <li><a href="http://store.phalconphp.com/">Store</a></li>
-              </ul>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-              <h4>About</h4>
-              <ul>
-                  <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
-                  <li><a href="http://phalconphp.com/en/about">About</a></li>
-                  <li><a href="http://phalconphp.com/en/team">Team</a></li>
-                  <li><a href="http://phalconphp.com/en/roadmap">Roadmap</a></li>
-                  <li><a href="http://phalconphp.com/en/donate">Donate</a></li>
-                  <li><a href="http://phalconphp.com/en/consulting">Consulting</a></li>
-                  <li><a href="http://phalconphp.com/en/hosting">Hosting</a></li>
-              </ul>
-          </div>
-          <div id="license-spaccer" class="visible-xs"></div>
-          <div id="license-wrapper" class="col-xs-12 col-sm-4">
-              <p class="license">
-
-                  Found a typo or an error? Want to improve this document? The documentation sources are available on <a href="http://github.com/phalcon/docs">Github</a><br>
-                  Need support or have questions? Check our <a href="http://forum.phalconphp.com">Forum</a><br>
-                  <br>
-
-                  Phalcon Framework is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">new BSD license</a>.<br>
-                  Except where otherwise noted, content on this site is licensed under the
-                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
-
-                <div class="design">
-                  <span>Designed by:</span>
-
-                  <a href="http://www.fog-city.net/" class="fogcity" target="_blank" title="Fog City Software"><span>Fog City Software</span></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</footer>
-
-    </div>
-
-
   </body>
 </html>
